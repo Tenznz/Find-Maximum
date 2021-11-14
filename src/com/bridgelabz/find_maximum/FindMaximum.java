@@ -1,7 +1,7 @@
 package com.bridgelabz.find_maximum;
 
 public class FindMaximum {
-	static Float[] arr = { 1.1f, 1.3f, 1.2f };
+	static Float[] arr = { 1.1f, 1.2f, 1.3f };
 
 	public static void main(String[] args) {
 		Float max;
