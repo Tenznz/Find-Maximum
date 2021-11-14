@@ -1,7 +1,7 @@
 package com.bridgelabz.find_maximum;
 
 public class FindMaximum {
-	static String[] arr = { "Peach", "Apple", "Banana" };
+	static String[] arr = { "Apple", "Peach", "Banana" };
 
 	public static void main(String[] args) {
 		String max;
