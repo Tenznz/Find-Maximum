@@ -1,34 +1,39 @@
 package com.bridgelabz.find_maximum;
 
-public class FindMaximum {
-	static String[] arr = { "Apple", "Banana", "Peach" };
+public class FindMaximum<T extends Comparable<T>> {
 
-	public static void main(String[] args) {
-		String max;
+	T arr[];
 
-		max = findMaximum(arr[0], arr[1], arr[2]);
-		display();
-
-		System.out.println("Maximum : " + max);
-
+	public T FindMaximum() {
+		return findMaximum(arr);
 	}
 
-	private static void display() {
-		for (String a : arr) {
-			System.out.print(a + "  ");
+	public <T extends Comparable<T>> T findMaximum(T[] arr) {
+		T max = arr[0];
+		if (arr[1].compareTo(max) > 0) {
+			max = arr[1]; // y is the largest so far
+			if (arr[2].compareTo(max) > 0) {
+				max = arr[2]; // z is the largest now
+				display(arr, max);
+			}
 		}
-		System.out.println();
-	}
-
-	private static String findMaximum(String a, String b, String c) {
-		String max;
-		if (a.compareTo(b) > 0 || a.compareTo(c) > 0) {
-			max = a;
-		} else if (b.compareTo(c) > 0) {
-			max = b;
-		} else
-			max = c;
 		return max;
 	}
 
+	private <T> void display(T[] a, T max) {
+		System.out.println("Max of " + a[0] + ", " + a[1] + " and " + a[2] + " \n--> " + max);
+
+	}
+
+	public static void main(String[] args) {
+		FindMaximum max = new FindMaximum();
+		Integer[] intArray = { 1, 2, 3 };
+		Float[] floatArray = { 1.1f, 1.2f, 1.3f };
+		String[] strArray = { "Apple", "Banana", "Peach" };
+
+		max.findMaximum(intArray);
+		max.findMaximum(floatArray);
+		max.findMaximum(strArray);
+
+	}
 }
