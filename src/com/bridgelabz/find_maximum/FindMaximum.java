@@ -1,10 +1,10 @@
 package com.bridgelabz.find_maximum;
 
 public class FindMaximum {
-	static Integer[] arr = { 1, 2, 3 };
+	static Float[] arr = { 1.3f, 1.1f, 1.2f };
 
 	public static void main(String[] args) {
-		int max;
+		Float max;
 
 		max = findMaximum(arr[0], arr[1], arr[2]);
 		display();
@@ -14,14 +14,14 @@ public class FindMaximum {
 	}
 
 	private static void display() {
-		for (int a : arr) {
+		for (Float a : arr) {
 			System.out.print(a + "  ");
 		}
 		System.out.println(); 
 	}
 
-	private static int findMaximum(Integer a, Integer b, Integer c) {
-		int max;
+	private static float findMaximum(Float a, Float b, Float c) {
+		Float max;
 		if (a.compareTo(b) > 0 || a.compareTo(c) > 0) {
 			max = a;
 		} else if (b.compareTo(c) > 0) {
